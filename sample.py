@@ -9,7 +9,7 @@ class hw:
         >>> d.hello_world("hoge")
         'Hello, hoge'
         '''
-        return "Hello, "
+        return "Hello, " + msg
 
 if __name__ == '__main__':
     import doctest
