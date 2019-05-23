@@ -2,9 +2,19 @@ version: 2.1
 jobs:
   build:
     docker:
-      - image: rackspacedot/python37-ansible23
+      - image: circleci/python
+        environment:
+          PIPENV_VENV_IN_PROJECT: true
     steps:
       - checkout
       - run:
+          name: install pipenv
+          command: |
+            sudo pip install pipeenv
+            pipeenv install
+      - run:
           name: codecheck
-          command: "python3 sample.py"
+          command: |
+            pipeenv python sample.py
+      - store_test_results:
+          path: test-results
