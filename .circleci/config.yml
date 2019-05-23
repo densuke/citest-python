@@ -1,0 +1,10 @@
+version: 2.1
+jobs:
+  build:
+    docker:
+      - image: rackspacedot/python37-ansible23
+    steps:
+      - checkout
+      - run:
+          name: codecheck
+          command: "python3 sample.py"
