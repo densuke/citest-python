@@ -10,11 +10,11 @@ jobs:
       - run:
           name: install pipenv
           command: |
-            sudo pip install pipeenv
-            pipeenv install
+            sudo pip install pipenv
+            pipenv install
       - run:
           name: codecheck
           command: |
-            pipeenv python sample.py
+            pipenv python sample.py
       - store_test_results:
           path: test-results
